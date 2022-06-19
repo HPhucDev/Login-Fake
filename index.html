@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical News | Cộng đồng Sức khoẻ và Cuộc sống</title>
+    <link rel="icon" href="/Logo.png">
+    <link rel="stylesheet" href="login.css">
+
+    <!--     
+    <script defer src="/__/firebase/8.4.2/firebase-app.js"></script>
+    <script defer src="/__/firebase/8.4.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/init.js"></script> -->
+
+    <!------------------------Styling------------------------->
+
+    <!------------------------Styling------------------------->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.8.3/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.8.3/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.8.3/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+
+<body style="height:100vh;overflow:hidden">
+
+    <iFrame src="https://medical-news-ute.vercel.app/" width="101% " height="100%" style="position:relative;top: 0px;
+    left: -8px;" name="the-iFrame" frameborder="0">
+</iFrame>
+  
+    <div id="modal" class="modal">
+        <div class="modal__content active">
+            <div class="auth-wrap">
+                <div>
+                    <div class="auth-header">
+                        <ul>
+                            <li><a>Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                    <div class="auth-body">
+                        <div class="form-wrap">
+                            <form id="form-login">
+                                <div class="form-group d-flex">
+                                    <div class="d-flex label-group"><label>Tên đăng nhập</label></div>
+                                    <div class="field-wrap"><input placeholder="Username" id="username" required="" name="username" type="text" value=""></div>
+                                </div>
+                                <div class="form-group d-flex">
+                                    <div class="label-group d-flex"><label>Mật khẩu</label></div>
+                                    <div class="field-wrap"><input placeholder="Password" required="" id="password" name="password" type="password" value=""></div>
+                                </div>
+                                <div class="d-flex"><label class="remember-label" for="remember"><span>Ghi nhớ mật khẩu</span><input type="checkbox" id="remember"><span class="checkmark"></span></label></div>
+                                <button id="submit" class="rounded-2">Đăng nhập</button><span></span></form>
+                            <span class="register-choose"><label>Bạn chưa có tài khoản. </label><a>Đăng ký ngay?</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__content__close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+    <!------------------------Page Layout Content------------------------->
+
+
+
+   
+    <!------------------------Scripting------------------------->
+</body>
+
+</html>
